@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Product } from './product.model';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +11,7 @@ import { Product } from './product.model';
 export class AppComponent {
 
   title = 'platzi-store';
+  power = 20;
   input = '';
   array = ['🍎', '🍏', '🍇', '🍌', '🍑'];
   products: Product[] = [
@@ -57,13 +60,13 @@ export class AppComponent {
   ];
 
   addItem() {
-    this.array.push(this.title)
+    this.array.push(this.title);
   }
   deleteItem(index: number) {
-    this.array.splice(index, 1)
+    this.array.splice(index, 1);
   }
   clickProduct(id: number) {
-    console.log(id)
+    console.log(id);
   }
 
 }
