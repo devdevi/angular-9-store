@@ -59,3 +59,12 @@ Eliminar el componente del array de declarations de otros módulos e importarlo 
 Crear el routing para el módulo Home. En angular cada módulo debe tener un routing
 cd src/app/components/home
 ng g module home-routing --flat --module=home
+
+### Esta clase es oro. La clave para separar los módulos es:
+
+Crear una carpeta que contendrá el módulo
+Crear un módulo que llame a todos los componentes que utilizará
+Crear un módulo para sus rutas
+Cambiar la importación dentro del routing principal
+Eliminar referencias o errores que surjan por el movimiento
+
