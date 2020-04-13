@@ -51,8 +51,8 @@ export class ProductsService {
     },
   ];
   constructor() { }
-  getAllProducts(id: string) {
-    return this.products.find(item => id === item.id);
+  getAllProducts() {
+    return this.products;
   }
   getProduct(id: string) {
     return this.products.find(item => id === item.id);

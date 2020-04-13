@@ -5,3 +5,4 @@
 <p><strong>{{product.price | exponential }}</strong></p>
 <hr> {{ today | date:"MM/dd/yy" }}
 <button (click)="add()">Añadir al carrito</button>
+<button [routerLink]="['/products/', product.id]">Ver Detalle</button>
