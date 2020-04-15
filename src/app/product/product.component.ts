@@ -9,8 +9,8 @@ import {
   DoCheck,
   SimpleChanges
 } from '@angular/core';
-import { MaterialModule } from '../../material/material.module';
-import { Product } from '../../product.model';
+import { MaterialModule } from '../material/material.module';
+import { Product } from '../product.model';
 
 @Component({
   selector: 'app-product',
