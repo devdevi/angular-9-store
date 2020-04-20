@@ -4,7 +4,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { SharedModule } from '../shared/shared.module';
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
-
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -17,6 +17,7 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
     CommonModule,
     SharedModule,
     ContactRoutingModule,
+    MaterialModule,
   ]
 })
 export class ContactModule { }
