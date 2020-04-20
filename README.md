@@ -28,7 +28,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ### Construyendo una directiva propia
-``` ng g d highlight ```
+``` ng g d highlight 
+ng g m admin --routing
+```
 
 
 ### Introducción al NgModule

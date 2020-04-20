@@ -9,7 +9,7 @@ import {
   DoCheck,
   SimpleChanges
 } from '@angular/core';
-import { MaterialModule } from '../../../material/material.module';
+
 import { Product } from '../../../core/models/product.model';
 
 @Component({
