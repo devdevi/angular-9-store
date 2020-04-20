@@ -24,7 +24,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
   today = new Date();
   constructor() {
     console.log('COnstructor product');
-   }
+  }
 
   // ngOnChanges(changes: SimpleChanges) {
   //   console.log(`${this.product.id} on changes`)
@@ -34,8 +34,8 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
     console.log(`${this.product.id} on Init`);
   }
   ngDoCheck() {
-    console.log(`${this.product.id} DoCheck`);
-  //   console.log(changes)
+    /*     console.log(`${this.product.id} DoCheck`); */
+    //   console.log(changes)
   }
   ngOnDestroy() {
     console.log(`${this.product.id} OnDestroy`);
