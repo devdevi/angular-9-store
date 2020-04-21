@@ -70,3 +70,42 @@ Crear un módulo para sus rutas
 Cambiar la importación dentro del routing principal
 Eliminar referencias o errores que surjan por el movimiento
 
+### Ambientes en Angular
+Un entorno de aplicación en Angular (environment) es información de configuración JSON que le dice al sistema de compilación qué archivos cambiar cuando usa ng build y ng serve.
+.
+La recomendación es hacer ambientes dentro del directorio environments/environment.[nombre].ts, y para registrarlo necesitas modificar el archivo angular.json
+.
+Para agregar un nuevo ambiente al angular.json se necesitan duplicar el environment de build y de serve dentro de projects.<project-name>.architect.build.configurations.nameOfNewEnvironment y de projects.<project-name>.architect.serve.configurations.production y cambiar production por el nombre que quieras que reciba tu environment, como staging o local, etc.
+.
+Recuerda que es muy delicado este archivo y que lo tienes que hacer a conciencia, además de que tienes que colocar la ruta de tu archivo de environments en fileReplacements, porque lo que hace este archivo es reemplazar las ocurrencias de importación de src/environments/environment.ts por el archivo de ambiente que le indiques.
+
+
+```
+{
+  projects: {
+    nameOfProject: {
+      ...
+      architect: {
+        build: {
+          ...
+          production: {} <-- Duplicar este objeto
+        },
+        serve: {
+          configurations: {
+            ...
+            production: {} <-- Duplicar este objeto
+          }
+        }
+      }
+    }
+  }
+}
+
+```
+
+```
+ng serve -c=stag
+<!-- Productivo -->
+
+ng build -c=stag
+```

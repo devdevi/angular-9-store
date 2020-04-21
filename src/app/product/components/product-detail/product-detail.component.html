@@ -1,10 +1,15 @@
-<div>
+<div *ngIf="product">
+  <div>
     <img [src]="product.image" alt="">
-</div>
-<div>
+  </div>
+  <div>
     <ul>
-        <li>Nombre: {{ product.title }}</li>
-        <li>Precio: {{ product.price | currency }}</li>
+      <li>Nombre: {{ product.title }}</li>
+      <li>Precio: {{ product.price | currency }}</li>
     </ul>
     <p>{{ product.description }}</p>
+  </div>
+  <button mat-button color="warn" (click)="createProduct()">Create</button>
+  <button mat-button color="warn" (click)="updateProduct(product.id)">Update</button>
+  <button mat-button color="warn" (click)="deleteProduct(product.id)">Eliminar</button>
 </div>
