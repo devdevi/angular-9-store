@@ -12,7 +12,7 @@
         <hr> {{ today | date:"MM/dd/yy" }}
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button color="primary" (click)="add()">Añadir al carrito</button>
+        <button mat-button color="primary" (click)="addCart()">Añadir al carrito</button>
         <button mat-button color="accent" [routerLink]="['/products/', product.id]">Ver Detalle</button>
     </mat-card-actions>
 </mat-card>

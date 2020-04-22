@@ -7,7 +7,7 @@
                 <span><a mat-button routerLink="/contact" routerLinkActive="active">Contact</a></span>
                 <span class="example-spacer"></span>
             </nav>
-            <button mat-button color="accent" matBadge="4" matBadgeColor="accent" matBadgeSize="medium">
+            <button mat-button color="accent" [matBadge]="total" matBadgeColor="accent" matBadgeSize="medium">
                 <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">shopping_cart</mat-icon>
                 Carrito
             </button>
