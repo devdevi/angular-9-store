@@ -37,7 +37,7 @@ export class ProductDetailComponent implements OnInit {
       offer: false,
       image: "https://q-cf.bstatic.com/images/hotel/max1024x768/118/118240449.jpg"
   }
-    this.productsService.postProduct(product)
+    this.productsService.createProduct(product)
   }
   updateProduct(id: string) {
     const product: Partial<Product> = {

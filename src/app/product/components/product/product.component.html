@@ -4,7 +4,7 @@
         <mat-card-title>{{ product.title | uppercase }}</mat-card-title>
         <mat-card-subtitle>{{product.price | currency:'CLP' }}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="product.image" alt="Photo of a Shiba Inu">
+    <img mat-card-image class="crop-image" [src]="product.image" alt="Photo of a Shiba Inu">
     <mat-card-content>
         <p>
             {{ product.description | slice:0:10}}
