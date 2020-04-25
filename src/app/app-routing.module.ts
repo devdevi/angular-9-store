@@ -33,7 +33,6 @@ const routes: Routes = [
         path: 'contact',
         loadChildren: () => import('./contact/contact.module').then((m) => m.ContactModule),
         /*         component: ContactComponent, */
-        canActivate: [AdminGuard]
       },
       {
         path: 'demo',
@@ -50,6 +49,7 @@ const routes: Routes = [
     ]
   },
   {
+    canActivate: [AdminGuard],
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule)
   },
