@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RepeatNumberPipe } from './pipes/repeat/repeat-number.pipe';
+import { DeleteRepeatsPipe } from './pipes/delete/delete-repeats.pipe';
 
 
 
@@ -18,6 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     CartComponent,
+    RepeatNumberPipe,
+    DeleteRepeatsPipe,
   ],
   exports: [
     ExponentialPipe,
@@ -25,6 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     CartComponent,
+    RepeatNumberPipe,
+    DeleteRepeatsPipe,
   ],
   imports: [
     CommonModule,

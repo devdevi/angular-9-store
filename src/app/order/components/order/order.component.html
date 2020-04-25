@@ -1,0 +1,58 @@
+<mat-horizontal-stepper>
+    <mat-step>
+      <ng-template matStepLabel>Sus productos</ng-template>
+      <div *ngIf="(products$ | async) as products">
+          <p *ngIf="products.length === 0">no hay productos</p>
+
+          <table mat-table [dataSource]="products | deleteRepeats" class="mat-elevation-z8">
+          
+            <!-- img Column -->
+            <ng-container matColumnDef="img">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let product">
+                <img class="image" [src]="product.image" alt=""> </td>
+            </ng-container>
+             <!-- title Column -->
+             <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> title </th>
+                <td mat-cell *matCellDef="let product"> {{product.title}} </td>
+              </ng-container>
+            
+          
+            <!-- price Column -->
+            <ng-container matColumnDef="price">
+              <th mat-header-cell *matHeaderCellDef> price </th>
+              <td mat-cell *matCellDef="let product"> {{product.price}} </td>
+            </ng-container>
+          
+            <!-- cant Column -->
+            <ng-container matColumnDef="cant">
+              <th mat-header-cell *matHeaderCellDef> cant </th>
+              <td mat-cell *matCellDef="let product">  {{ product |repeatNumber: products }}</td>
+            </ng-container>
+          
+            <!-- actions Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> actions</th>
+              <td mat-cell *matCellDef="let product">
+              <button mat-mini-fab color="primary" (click)="addProduct(product)">+</button>
+              <button mat-mini-fab color="accent" (click)="deleteProduct(product)">-</button>
+            </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+</div>
+
+    
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Datos personales</ng-template>
+      <h1>contenifo</h1>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Pago</ng-template>
+      <h1>contenifo</h1>
+    </mat-step>
+  </mat-horizontal-stepper>

@@ -5,10 +5,11 @@
                 <span><a mat-button routerLink="/home" routerLinkActive="active">Home</a></span>
                 <span> <a mat-button routerLink="/products" routerLinkActive="active">Products</a></span>
                 <span><a mat-button routerLink="/contact" routerLinkActive="active">Contact</a></span>
+                <span><a mat-button routerLink="/order" routerLinkActive="active">Order</a></span>
                 <span class="example-spacer"></span>
             </nav>
             <!-- Suscripción del observable total$ | async evitar perdida de datos en la memoria mejora el performance-->
-            <button mat-button color="accent" [matBadge]="total$ | async " matBadgeColor="accent" matBadgeSize="medium">
+            <button  routerLink="/order"  mat-button color="accent" [matBadge]="total$ | async " matBadgeColor="accent" matBadgeSize="medium">
                 <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">shopping_cart</mat-icon>
                 Carrito
             </button>
