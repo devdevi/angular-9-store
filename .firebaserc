@@ -1,4 +1,13 @@
 {
+  "targets": {
+    "store-2020-ng": {
+      "hosting": {
+        "store": [
+          "store-2020-ng"
+        ]
+      }
+    }
+  },
   "projects": {
     "default": "store-2020-ng"
   }
