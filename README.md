@@ -109,3 +109,6 @@ ng serve -c=stag
 
 ng build -c=stag
 ```
+
+### Observable es un patrón de diseño de software, donde básicamente tienes algo que observar (Observable) pueden ser eventos de un formulario, un llamada Htttp, etc, nosotros podemos suscribirnos a esos eventos. Otro componente importante es el que observa (Observer) este es el que se suscribe a los eventos y por medio de callbacks captura los eventos que emite el observable, por último tenemos el subject o sujeto que es el que hace que el observable lance los eventos para ser capturados.
+Flujo de datos continuo
