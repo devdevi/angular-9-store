@@ -7,6 +7,7 @@ import {Product} from '../../models/product.model';
 })
 export class CartService {
   private products: Product[] = [];
+  /* Cúal es la forma correcta de crear un Observable para manejar valores y comunicarlos a través de un servicio */
   private cart = new BehaviorSubject<Product[]>([]);
 
   /* Publica puede ser usada por cualquier componente */
@@ -21,7 +22,7 @@ export class CartService {
   }
   deleteCart(product: Product) {
     /* Cremos nuevo estado de products para no tener inmutabilidad */
-    var pos = this.products.map(item => item.id).indexOf(product.id); 
+    var pos = this.products.map(item => item.id).indexOf(product.id);
     const idx = this.products.indexOf(product)
     console.log(this.products,pos, product)
     this.products  =  this.products.splice(idx, 1);
