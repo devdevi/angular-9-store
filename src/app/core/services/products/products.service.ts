@@ -58,4 +58,9 @@ export class ProductsService {
     Sentry.captureException(error);
     return throwError('ups algo salio mal');
   }
+
+  /* Download files */
+  getFile() {
+    return this.http.get('assets/files/text.txt', {responseType: 'text'} );
+  }
 }

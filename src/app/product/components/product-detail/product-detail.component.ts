@@ -4,7 +4,7 @@ import { ProductsService } from '@core/services/products/products.service';
 import { Product } from '@core/models/product.model';
 import { switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-
+import * as FileSaver from 'file-saver';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -68,5 +68,13 @@ export class ProductDetailComponent implements OnInit {
       },
       error => console.error(error)
     );
+  }
+  getFile() {
+    this.productsService.getFile()
+      .subscribe(content => {
+        const blob = new Blob( [content], {type: 'text'});
+        FileSaver.saveAs(blob, `${new Date()}.text`);
+        console.log(content);
+      });
   }
 }
