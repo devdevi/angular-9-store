@@ -68,3 +68,23 @@ Sentry.init({
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+/*
+@Injectable()
+export class AuthInterceptor implements HttpInterceptor {
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const token = localStorage.getItem('ACCESS_TOKEN');
+
+    if (!token) {
+      return next.handle(req);
+    }
+
+    const req1 = req.clone({
+      headers: req.headers.set('Authorization', `Bearer ${token}`),
+    });
+
+    return next.handle(req1);
+  }
+} */
