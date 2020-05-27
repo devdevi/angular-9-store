@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '@core/models/product.model'
+import { Product } from '@core/models/product.model';
 import { CartService } from 'src/app/core/services/cart/cart.service';
 import { Observable } from 'rxjs';
 
@@ -12,22 +12,22 @@ import { Observable } from 'rxjs';
 })
 export class OrderComponent implements OnInit {
 
-  products$: Observable<Product[]>
-  displayedColumns: string[] = ['img','title', 'price', 'cant', 'actions'];
+  products$: Observable<Product[]>;
+  displayedColumns: string[] = ['img', 'title', 'price', 'cant', 'actions'];
 
   constructor(
-    private cartService:  CartService
+    private cartService: CartService
   ) {
-    this.products$ = this.cartService.cart$
+    this.products$ = this.cartService.cart$;
    }
 
   ngOnInit(): void {
   }
   addProduct(product: Product) {
-    this.cartService.addCart(product)
+    this.cartService.addCart(product);
   }
   deleteProduct(product: Product) {
-    this.cartService.deleteCart(product)
+    this.cartService.deleteCart(product);
   }
 
 }

@@ -18,7 +18,7 @@ export class BannerComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
   ngAfterViewInit() {
-    this.mySwiper = new Swiper(".swiper-container", {
+    this.mySwiper = new Swiper('.swiper-container', {
       // navigation: {
       //   nextEl: “.swiper - button - next”,
       //   prevEl: “.swiper - button - prev”

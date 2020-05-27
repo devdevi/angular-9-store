@@ -22,9 +22,9 @@ export class ProductEditComponent implements OnInit {
     this.activeRoute.params.subscribe((params: Params) => {
       const id = params.id;
       this.productsService.getProduct(id)
-      .subscribe(product=> this.form.patchValue({...product}))
-    })
-    this.buildForm()
+      .subscribe(product => this.form.patchValue({...product}));
+    });
+    this.buildForm();
   }
 
   saveProduct(event: Event) {
@@ -45,10 +45,10 @@ export class ProductEditComponent implements OnInit {
       price: ['', [Validators.required, MyValidators.isPriceValid]],
       image: [''],
       description: ['', [Validators.required]],
-    })
+    });
   }
   get priceField() {
-    return this.form.get('price')
+    return this.form.get('price');
   }
 
 }

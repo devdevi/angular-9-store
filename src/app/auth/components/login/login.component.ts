@@ -29,11 +29,11 @@ export class LoginComponent implements OnInit {
       const value = this.form.value;
       this.authService.login(value.email, value.password)
       .then(() => {
-        this.router.navigate(['/admin'])
+        this.router.navigate(['/admin']);
       })
       .catch((e) => {
-        alert(e.message)
-      })
+        alert(e.message);
+      });
     }
     console.log(this.form.value);
   }

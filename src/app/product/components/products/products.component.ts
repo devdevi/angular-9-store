@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.fetchProducts()
+    this.fetchProducts();
   }
 
 

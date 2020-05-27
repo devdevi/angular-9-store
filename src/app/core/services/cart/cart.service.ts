@@ -16,18 +16,18 @@ export class CartService {
 
   addCart(product: Product) {
     /* Cremos nuevo estado de products para no tener inmutabilidad */
-    this.products = [...this.products, product]
+    this.products = [...this.products, product];
     /* Notificamos que hubo un cambio a todos los componentes que estan observando cart$  */
-    this.cart.next(this.products)
+    this.cart.next(this.products);
   }
   deleteCart(product: Product) {
     /* Cremos nuevo estado de products para no tener inmutabilidad */
-    var pos = this.products.map(item => item.id).indexOf(product.id);
-    const idx = this.products.indexOf(product)
-    console.log(this.products,pos, product)
+    const pos = this.products.map(item => item.id).indexOf(product.id);
+    const idx = this.products.indexOf(product);
+    console.log(this.products, pos, product);
     this.products  =  this.products.splice(idx, 1);
 
     /* Notificamos que hubo un cambio a todos los componentes que estan observando cart$  */
-    this.cart.next(this.products)
+    this.cart.next(this.products);
   }
 }

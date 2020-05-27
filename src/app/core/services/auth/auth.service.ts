@@ -18,10 +18,10 @@ export class AuthService {
     return this.af.auth.signInWithEmailAndPassword(email, password);
   }
   logout() {
-    return this.af.auth.signOut()
+    return this.af.auth.signOut();
   }
   hasUser() {
-    return this.af.authState
+    return this.af.authState;
 /*     .subscribe(user => {
       console.error(user === null)
     }) */

@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
   /*  total: Number = 0; */
   /* Observable */
-  total$: Observable<number>
+  total$: Observable<number>;
   constructor(
     private cartService: CartService,
   ) {
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
     this.total$ = this.cartService.cart$
       .pipe(
         map(products => products.length)
-      )
+      );
   }
 
   ngOnInit(): void {

@@ -11,7 +11,7 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
 
 const routes: Routes = [
 {
-  path: "",
+  path: '',
   component: NavComponent,
   children: [
     {

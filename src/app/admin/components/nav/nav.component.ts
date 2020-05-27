@@ -19,13 +19,13 @@ export class NavComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver,
-    private authService: AuthService,
-    private router: Router) {}
+              private authService: AuthService,
+              private router: Router) {}
     logout() {
       this.authService.logout()
       .then(() => {
-        this.router.navigate(['/home'])
-      })
+        this.router.navigate(['/home']);
+      });
     }
 
   }
