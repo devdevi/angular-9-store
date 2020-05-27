@@ -25,6 +25,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
+import * as Sentry from '@sentry/browser';
+
+Sentry.init({
+  dsn: 'https://fc9d2dec2ffb4c018ceb390c31bd5c2b@o398589.ingest.sentry.io/5254553'
+});
 @NgModule({
   declarations: [
     AppComponent,

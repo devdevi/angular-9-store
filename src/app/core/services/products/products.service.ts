@@ -4,8 +4,10 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Product } from '@core/models/product.model';
 
 import { environment } from './../../../../environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/internal/operators';
+
+import * as Sentry from '@sentry/browser';
 
 interface User {
   email: string;
@@ -45,13 +47,14 @@ export class ProductsService {
   getRandomUsers(): Observable<User[]> {
     return this.http.get('https://randokldfjsdlmuser.me/api/?results=2')
     .pipe(
-     /*  catchError(this.handleError), */
+     catchError(this.handleError),
       map((response: any) => response.results as User[]),
     );
   }
-
+  /* Traqueo de errores */
   private handleError(error: HttpErrorResponse) {
-    console.log(error);
-  /*   return throwError('ups algo salio mal'); */
+    console.log(error.status);
+    Sentry.captureException(error)
+    return throwError('ups algo salio mal');
   }
 }
