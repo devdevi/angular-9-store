@@ -37,6 +37,12 @@ export class LoginComponent implements OnInit {
     }
     console.log(this.form.value);
   }
+  loginRestApi() {
+    this.authService.loginRestApi( 'visidevi@gmail.com', 'unpassword')
+    .subscribe(data => {
+      console.log(data);
+    });
+  }
 
   private buildForm() {
     this.form = this.formBuilder.group({
