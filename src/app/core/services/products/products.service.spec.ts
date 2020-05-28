@@ -81,5 +81,7 @@ describe('ProductsService', () => {
 /*   }); */
 /* Coverage */
 /*  ng test --watch=false --codeCoverage=true */
+/* http-sever coverage/store/ */
+/* prueba usar el prefijo winpty (winpty comando) */
 });
 
