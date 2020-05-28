@@ -9,7 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { ExamplenavComponent } from './examplenav.component';
 
-describe('ExamplenavComponent', () => {
+xdescribe('ExamplenavComponent', () => {
   let component: ExamplenavComponent;
   let fixture: ComponentFixture<ExamplenavComponent>;
 

@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ### Construyendo una directiva propia
-``` ng g d highlight 
+``` ng g d highlight
 ng g m admin --routing
 ```
 
@@ -125,10 +125,10 @@ ng g c components/cart
 
 #### --inline-style
 
-Evita que se cree el archivo de estilos 
+Evita que se cree el archivo de estilos
 
 ```shell
-ng g c componente --inline-style  
+ng g c componente --inline-style
 ```
 
 #### --inline-template
@@ -136,7 +136,7 @@ ng g c componente --inline-style
 Este evita que se cree el html
 
 ```shell
-ng g c componente --inline-template  
+ng g c componente --inline-template
 ```
 
 ## `ng lint`->
@@ -281,7 +281,7 @@ export class HighlightDirective {
 Es muy bueno saber como construir un componente de manera manual, pero existe un comando para generar nuevos componentes de forma automática.
 
 ```bash
-ng g c nombredelcomponente 
+ng g c nombredelcomponente
 ```
 
 Nomenclatura : **name.component.ts**
@@ -385,7 +385,7 @@ export class ProductComponent {
 }
 ```
 
-Los `EventEmmiter`'s pueden emitir un evento con un argumento que será recibido por el padre. 
+Los `EventEmmiter`'s pueden emitir un evento con un argumento que será recibido por el padre.
 
 ```typescript
 export class ProductComponent {
@@ -396,7 +396,7 @@ export class ProductComponent {
 }
 ```
 
-Para hacer uso del output podemos llamar el evento desde paréntesis y asignarle un evento `(clickAddToCart)="handler($event)"`: 
+Para hacer uso del output podemos llamar el evento desde paréntesis y asignarle un evento `(clickAddToCart)="handler($event)"`:
 
 ```typescript
 // Componente padre
@@ -422,7 +422,7 @@ El event es recibido desde el `emit` del `EventEmmiter` :
 
 ### Referencias:
 
-- https://desarrolloweb.com/articulos/introduccion-teorica-observables-angular.html  
+- https://desarrolloweb.com/articulos/introduccion-teorica-observables-angular.html
 - https://platzi.com/clases/1071-angular2/6433-que-es-un-observable/
 
 Observable es un patrón de diseño de software, donde básicamente tienes algo que observar (Observable) pueden ser eventos de un formulario, un llamada Htttp, etc, nosotros podemos suscribirnos a esos eventos. Otro componente importante es el que observa (Observer) este es el que se suscribe a los eventos y por medio de callbacks captura los eventos que emite el observable, por último tenemos el subject o sujeto que es el que hace que el observable lance los eventos para ser capturados.
@@ -461,7 +461,7 @@ Nosotros podemos crear nuestros pipes, pero Angular por defecto provee muchos pi
 - [ TitleCasePipe](https://angular.io/api/common/TitleCasePipe)
 - [ UpperCasePipe](https://angular.io/api/common/UpperCasePipe)
 
-[Pueden ver unos ejemplos acá](https://bit.ly/2oRRj0Z) 
+[Pueden ver unos ejemplos acá](https://bit.ly/2oRRj0Z)
 
 Para agregar localismos a nuestros pipes (en este caso mexicanos) tendríamos que agregar el idioma a un `provider` dentro de `app.module.ts` de la siguiente forma:
 
@@ -473,7 +473,7 @@ import { registerLocaleData } from '@angular/common';
 
 registerLocaleData(localeEs);
 ...
- 
+
 @NgModule({
  ...
  providers: [ { provide: LOCALE_ID, useValue: 'es-mx' } ],
@@ -493,7 +493,7 @@ Un dato puede ingresar y puede ser convertido segun el pipe usado
 Recuerda que si quieres generar tus propios pipes puedes usar
 
 ```bash
-$ ng generate pipe <name> 
+$ ng generate pipe <name>
 $ ng g pipe <name>
 ```
 
@@ -516,7 +516,7 @@ export class ExponentialPipe implements PipeTransform {
 
 Los módulos en angular sirven para resumir o adjuntar varios artefactos de Angular como servicios, componentes y directivas, dividiendo y abstrayendo el dominio de la aplicación.
 
-De esta manera 
+De esta manera
 
 Los componentes que hacen parte de una página en particular se pueden encapsular en un mismo módulo.
 
@@ -540,10 +540,10 @@ const routes: Routes = [
     component = componentName
   },
 ]
-  
+
 ```
 
-Donde: 
+Donde:
 
 - `path` = ruta relativa al home ('/') de nuestra app
 - `component` = componente importado desde `componentName.component.ts`
@@ -573,7 +573,7 @@ Para definir una página no encontrada podemos utilizar la ruta `'**'` que simbo
 
 ### Redirecciones
 
-Para las redirecciones tenemos que usar las propiedades `redirectTo:'route'` y `pathMatch:'full'` 
+Para las redirecciones tenemos que usar las propiedades `redirectTo:'route'` y `pathMatch:'full'`
 
 ```typescript
   {
@@ -887,7 +887,7 @@ exportclassHomeModule {
 }
 ```
 
-## Lazy 
+## Lazy
 
 Es una técnica que ayuda a reducir el peso de las aplicaciones, de esta forma carga mas rápido el proyecto. La carga inicial de una pagina no debería ser Lazy ya que necesitamos que se cargue de una, como por ejemplo el Home.
 
@@ -969,7 +969,7 @@ La mayoría de las aplicaciones front-end se comunican con los servicios de back
 
 `HttpClient` viene desde `@angular/common/http` y ofrece una interfaz API HTTP de cliente simplificada para aplicaciones Angular.
 
-Los beneficios adicionales de **HttpClient** incluyen: 
+Los beneficios adicionales de **HttpClient** incluyen:
 
 - Suite de **pruebas** simplificadas
 - Requests y responses **tipados**
@@ -1090,8 +1090,8 @@ Un input de tipo FormControl permite la anidación de validadores (ValidatorFn) 
 
 ```typescript
 FormControl(
-  formState?: any, 
-  validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions, 
+  formState?: any,
+  validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions,
   asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[]
 ): FormControl
 ```
@@ -1126,3 +1126,10 @@ export class Component implements OnInit {
 
 - [Rxjs](https://rxjs-dev.firebaseapp.com/guide/)
 - [Operators](https://rxjs-dev.firebaseapp.com/guide/operators)
+
+
+/*La sección ARRANGE de un método de prueba unitaria inicializa los objetos y establece el valor de los datos que se pasan al método bajo prueba.
+
+La sección ACT invoca el método bajo prueba con los parámetros organizados.
+
+La sección ASERT verifica que la acción del método bajo prueba se comporta como se esperaba. */
