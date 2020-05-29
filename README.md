@@ -1133,3 +1133,7 @@ export class Component implements OnInit {
 La sección ACT invoca el método bajo prueba con los parámetros organizados.
 
 La sección ASERT verifica que la acción del método bajo prueba se comporta como se esperaba. */
+### docker
+```
+ docker run -d  -p 8080:80 -v /home/visaka/Documentos/estudio/angular-9-store/dist/store/:/usr/share/nginx/html nginx:alpine
+```
